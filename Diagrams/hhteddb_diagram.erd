@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="hhteddb_diagram.erd">
+	<entities>
+		<data-source id="mariaDB-17a536d4e2d-46f9153dc4845e5e">
+			<entity id="1" name="HHTEDTCERTIFICATION" fq-name="HHTEDDB.HHTEDTCERTIFICATION" order="0" x="498" y="20">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="2" name="HHTEDTCITY" fq-name="HHTEDDB.HHTEDTCITY" order="1" x="489" y="745">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="3" name="HHTEDTDEPARTMENT" fq-name="HHTEDDB.HHTEDTDEPARTMENT" order="2" x="482" y="954">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="4" name="HHTEDTEMPCER" fq-name="HHTEDDB.HHTEDTEMPCER" order="3" x="20" y="115">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="5" name="HHTEDTEMPLOYEE" fq-name="HHTEDDB.HHTEDTEMPLOYEE" order="4" x="116" y="893">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="6" name="HHTEDTEMPPRO" fq-name="HHTEDDB.HHTEDTEMPPRO" order="5" x="52" y="1356">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="7" name="HHTEDTEMPSKI" fq-name="HHTEDDB.HHTEDTEMPSKI" order="6" x="58" y="1610">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="8" name="HHTEDTFUNCTIONALITY" fq-name="HHTEDDB.HHTEDTFUNCTIONALITY" order="7" x="495" y="485">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="9" name="HHTEDTPOSITION" fq-name="HHTEDDB.HHTEDTPOSITION" order="8" x="471" y="1148">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="10" name="HHTEDTPROJECT" fq-name="HHTEDDB.HHTEDTPROJECT" order="9" x="471" y="1343">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="11" name="HHTEDTROLE" fq-name="HHTEDDB.HHTEDTROLE" order="10" x="400" y="273">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="12" name="HHTEDTROLFUN" fq-name="HHTEDDB.HHTEDTROLFUN" order="11" x="259" y="593">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="13" name="HHTEDTSKILL" fq-name="HHTEDDB.HHTEDTSKILL" order="12" x="579" y="1633">
+				<path name="HHTEDDB"/>
+			</entity>
+			<entity id="14" name="HHTEDTUSER" fq-name="HHTEDDB.HHTEDTUSER" order="13" x="737" y="710">
+				<path name="HHTEDDB"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="HHTEDRFKEMPCERPKCER" fq-name="HHTEDDB.HHTEDTEMPCER.HHTEDRFKEMPCERPKCER" type="fk" pk-ref="1" fk-ref="4"/>
+		<relation name="HHTEDRFKEMPPKCIT" fq-name="HHTEDDB.HHTEDTEMPLOYEE.HHTEDRFKEMPPKCIT" type="fk" pk-ref="2" fk-ref="5"/>
+		<relation name="HHTEDRFKEMPPKDEP" fq-name="HHTEDDB.HHTEDTEMPLOYEE.HHTEDRFKEMPPKDEP" type="fk" pk-ref="3" fk-ref="5"/>
+		<relation name="HHTEDRFKEMPCERPKEMP" fq-name="HHTEDDB.HHTEDTEMPCER.HHTEDRFKEMPCERPKEMP" type="fk" pk-ref="5" fk-ref="4"/>
+		<relation name="HHTEDRFKEMPIMMCHIPKEMP" fq-name="HHTEDDB.HHTEDTEMPLOYEE.HHTEDRFKEMPIMMCHIPKEMP" type="fk" pk-ref="5" fk-ref="5">
+			<bend type="rel" x="364" y="1213"/>
+			<bend type="rel" x="215" y="1293"/>
+		</relation>
+		<relation name="HHTEDRFKEMPPROPKEMP" fq-name="HHTEDDB.HHTEDTEMPPRO.HHTEDRFKEMPPROPKEMP" type="fk" pk-ref="5" fk-ref="6"/>
+		<relation name="HHTEDRFKEMPSKIPKEMP" fq-name="HHTEDDB.HHTEDTEMPSKI.HHTEDRFKEMPSKIPKEMP" type="fk" pk-ref="5" fk-ref="7"/>
+		<relation name="HHTEDRFKROLFUNPKFUN" fq-name="HHTEDDB.HHTEDTROLFUN.HHTEDRFKROLFUNPKFUN" type="fk" pk-ref="8" fk-ref="12"/>
+		<relation name="HHTEDRFKEMPPKPOS" fq-name="HHTEDDB.HHTEDTEMPLOYEE.HHTEDRFKEMPPKPOS" type="fk" pk-ref="9" fk-ref="5"/>
+		<relation name="HHTEDRFKEMPPROPKPRO" fq-name="HHTEDDB.HHTEDTEMPPRO.HHTEDRFKEMPPROPKPRO" type="fk" pk-ref="10" fk-ref="6"/>
+		<relation name="HHTEDRFKROLFUNPKROL" fq-name="HHTEDDB.HHTEDTROLFUN.HHTEDRFKROLFUNPKROL" type="fk" pk-ref="11" fk-ref="12"/>
+		<relation name="HHTEDRFKUSEPKROL" fq-name="HHTEDDB.HHTEDTUSER.HHTEDRFKUSEPKROL" type="fk" pk-ref="11" fk-ref="14"/>
+		<relation name="HHTEDRFKEMPSKIPKSKI" fq-name="HHTEDDB.HHTEDTEMPSKI.HHTEDRFKEMPSKIPKSKI" type="fk" pk-ref="13" fk-ref="7"/>
+		<relation name="HHTEDRFKCERPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTCERTIFICATION.HHTEDRFKCERPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="1"/>
+		<relation name="HHTEDRFKCERPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTCERTIFICATION.HHTEDRFKCERPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="1"/>
+		<relation name="HHTEDRFKCITPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTCITY.HHTEDRFKCITPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="2"/>
+		<relation name="HHTEDRFKCITPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTCITY.HHTEDRFKCITPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="2"/>
+		<relation name="HHTEDRFKDEPPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTDEPARTMENT.HHTEDRFKDEPPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="3"/>
+		<relation name="HHTEDRFKDEPPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTDEPARTMENT.HHTEDRFKDEPPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="3"/>
+		<relation name="HHTEDRFKEMPCERPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTEMPCER.HHTEDRFKEMPCERPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="4">
+			<bend type="abs" x="259" y="209"/>
+			<bend type="abs" x="498" y="209"/>
+		</relation>
+		<relation name="HHTEDRFKEMPCERPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTEMPCER.HHTEDRFKEMPCERPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="4">
+			<bend type="abs" x="259" y="230"/>
+			<bend type="abs" x="498" y="230"/>
+		</relation>
+		<relation name="HHTEDRFKEMPPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTEMPLOYEE.HHTEDRFKEMPPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="5"/>
+		<relation name="HHTEDRFKEMPPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTEMPLOYEE.HHTEDRFKEMPPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="5"/>
+		<relation name="HHTEDRFKEMPPKUSE" fq-name="HHTEDDB.HHTEDTEMPLOYEE.HHTEDRFKEMPPKUSE" type="fk" pk-ref="14" fk-ref="5"/>
+		<relation name="HHTEDRFKEMPPROPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTEMPPRO.HHTEDRFKEMPPROPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="6">
+			<bend type="abs" x="259" y="1525"/>
+			<bend type="abs" x="498" y="1525"/>
+		</relation>
+		<relation name="HHTEDRFKEMPPROPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTEMPPRO.HHTEDRFKEMPPROPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="6">
+			<bend type="abs" x="259" y="1546"/>
+			<bend type="abs" x="498" y="1546"/>
+		</relation>
+		<relation name="HHTEDRFKEMPSKIPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTEMPSKI.HHTEDRFKEMPSKIPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="7">
+			<bend type="abs" x="259" y="1766"/>
+			<bend type="abs" x="498" y="1766"/>
+		</relation>
+		<relation name="HHTEDRFKEMPSKIPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTEMPSKI.HHTEDRFKEMPSKIPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="7">
+			<bend type="abs" x="259" y="1787"/>
+			<bend type="abs" x="498" y="1787"/>
+		</relation>
+		<relation name="HHTEDRFKFUNPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTFUNCTIONALITY.HHTEDRFKFUNPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="8"/>
+		<relation name="HHTEDRFKFUNPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTFUNCTIONALITY.HHTEDRFKFUNPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="8"/>
+		<relation name="HHTEDRFKPOSPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTPOSITION.HHTEDRFKPOSPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="9"/>
+		<relation name="HHTEDRFKPOSPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTPOSITION.HHTEDRFKPOSPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="9"/>
+		<relation name="HHTEDRFKPROPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTPROJECT.HHTEDRFKPROPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="10"/>
+		<relation name="HHTEDRFKPROPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTPROJECT.HHTEDRFKPROPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="10"/>
+		<relation name="HHTEDRFKROLPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTROLE.HHTEDRFKROLPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="11"/>
+		<relation name="HHTEDRFKROLPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTROLE.HHTEDRFKROLPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="11"/>
+		<relation name="HHTEDRFKROLFUNPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTROLFUN.HHTEDRFKROLFUNPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="12"/>
+		<relation name="HHTEDRFKROLFUNPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTROLFUN.HHTEDRFKROLFUNPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="12"/>
+		<relation name="HHTEDRFKSKIPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTSKILL.HHTEDRFKSKIPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="13"/>
+		<relation name="HHTEDRFKSKIPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTSKILL.HHTEDRFKSKIPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="13"/>
+		<relation name="HHTEDRFKUSEPKCREATEDUSER" fq-name="HHTEDDB.HHTEDTUSER.HHTEDRFKUSEPKCREATEDUSER" type="fk" pk-ref="14" fk-ref="14">
+			<bend type="rel" x="985" y="936"/>
+			<bend type="rel" x="836" y="992"/>
+		</relation>
+		<relation name="HHTEDRFKUSEPKMODIFIEDUSER" fq-name="HHTEDDB.HHTEDTUSER.HHTEDRFKUSEPKMODIFIEDUSER" type="fk" pk-ref="14" fk-ref="14">
+			<bend type="rel" x="985" y="936"/>
+			<bend type="rel" x="836" y="992"/>
+		</relation>
+	</relations>
+</diagram>
