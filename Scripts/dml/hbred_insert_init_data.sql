@@ -1,0 +1,10 @@
+/* Add functionalities */
+INSERT INTO HHTEDTFUNCTIONALITY(CODE, DESCRIPTION, CREATED_DATE) VALUES('register-employe', 'Register an employee', NOW());
+
+/* Add roles */
+INSERT INTO HHTEDTROLE(CODE, NAME, CREATED_DATE) VALUES('admin', 'Administrator', NOW());
+
+/* Add functionalities to Role */
+INSERT INTO HHTEDTROLFUN(ROLE_ID, FUNCTIONALITY_ID, CREATED_DATE) VALUES (1,1, NOW());
+
+INSERT INTO HHTEDTUSER(EMAIL, PASSWORD, ROLE_ID, CREATED_DATE) VALUES ('admin@hiberus.com', '123', 1, NOW());
