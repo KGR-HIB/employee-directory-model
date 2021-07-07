@@ -28,3 +28,7 @@ Run the script: [Scripts/ddl/hbred_create_tables.sql](../Scripts/ddl/hbred_creat
 
 Run the script: [Scripts/ddl/hbred_alter_relationships.sql](../Scripts/ddl/hbred_alter_relationships.sql)
 
+## Add initial data 
+
+Run the script: [Scripts/dml/hbred_insert_init_data.sql](../Scripts/dml/hbred_insert_init_data.sql)
+
