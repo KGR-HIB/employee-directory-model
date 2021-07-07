@@ -12,6 +12,8 @@ DATASOURCE_USERNAME=uja7jqqw8xsg8ey5
 DATASOURCE_PASSWORD=PNQkgYN4uKfOyJTwx27i
 ```
 
+Note: This test database only allows 5 maximum connections. 
+
 ## Create new instance Data Base
 
 **Connect with the root user on the mysq server instance**
